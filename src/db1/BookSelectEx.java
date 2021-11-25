@@ -55,7 +55,7 @@ public class BookSelectEx {
 			while(rs.next()) {
 				// (1) next() 하면서 한행씩 데이터를 가져와서 변수에 저장
 				String bookNo = rs.getString(1);
-				String bookName = rs.getString(2);
+				String bookName = rs.getString(2);	
 				String bookAuthor = rs.getString(3);
 				int bookPrice = rs.getInt(4);
 				Date bookDate = rs.getDate(5);
