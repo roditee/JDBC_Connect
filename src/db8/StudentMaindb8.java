@@ -2,7 +2,7 @@ package db8;
 
 import java.util.Scanner;
 
-public class StudentMain {
+public class StudentMaindb8 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
@@ -22,20 +22,16 @@ public class StudentMain {
 		
 		switch(chioce) {
 		case 1 :
-			StudentInsert stdInsert = new StudentInsert();
+			StudentInsertdb8 stdInsert = new StudentInsertdb8();
 			stdInsert.insert();
 			break;
 		case 2 :
-			StudentSelect stdSelect = new StudentSelect();
+			StudentSelectdb8 stdSelect = new StudentSelectdb8();
 			stdSelect.select();
 			break;
 		case 3 :
-			StudentUpdate stdUpdate = new StudentUpdate();
-			stdUpdate.update();
 			break;
 		case 4 :
-			StudentDelete stdDelete = new StudentDelete();
-			stdDelete.delete();
 			break;
 		case 5 :
 			break;
@@ -45,5 +41,6 @@ public class StudentMain {
 		System.out.println("------------------------------------------");
 		System.out.println("종료되었습니다.");
 		System.out.println("------------------------------------------");
+		sc.close();
 	}
 }

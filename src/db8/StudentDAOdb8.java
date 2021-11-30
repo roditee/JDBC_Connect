@@ -1,25 +1,18 @@
-package db6;
-
-//(1) 생성자에서 DB 연결
-//(2) selectStudent() 메서드 : 데이터베이스의 student 테이블에서 select 한 결과 출력
-//(3) insertStudent(StudentDTO dto) 메서드 
-//		- main()에서 입력한 student 데이터를 전달 받아서 
-//   - student 테이블에 insert 작업 수행
+package db8;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
 
-public class StudentDAO {
+public class StudentDAOdb8 implements IStudentDAOdb8 {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
 	// 생성자 : 데이터베이스 연결
-	public StudentDAO() {
+	public StudentDAOdb8() {
 		try {
 			//JDBC Driver 클래스의 객체 생성 런타임시 로드
 			//Class.forName("com.mysql.cj.jdbc.Driver");
@@ -44,47 +37,9 @@ public class StudentDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	//(2) selectStudent() 메서드
-	// 반환 : ArrayList<StudentDTO>
-	public ArrayList<StudentDTO> selectStudent() {
-		ArrayList<StudentDTO> dataSet = null; // try 안과 밖에서 사용
-		
-		try {
-			// sql 직성
-			String sql = "select * from student order by stdNo";
-			
-			// 쿼리문 전송을 위한 PreparedStatement 객체 생성
-			// Connection 인터페이스의 prepareStatement() 메소드를 사용하여 객체 생성	
-			pstmt = con.prepareStatement(sql);
-			
-			// 쿼리문 실행시키고 결과 받아옴
-			// select 구문이므로 executeQuery() 메서드 사용
-			// 반환되는 결과는 ResultSet 객체가 받음	
-			rs = pstmt.executeQuery(sql);
-			
-			dataSet = new ArrayList<StudentDTO>();			
-			
-			while(rs.next()) {
-				dataSet.add(new StudentDTO(rs.getString(1),
-						                   rs.getString(2),
-						                   rs.getInt(3),
-						                   rs.getString(4),
-						                   rs.getDate(5).toString(),
-						                   rs.getString(6)
-							));		// DTO 1개가 1행에 해당		
-				
-			}
-			
-		} catch (Exception e) {
-			System.out.println("오류 발생");
-			e.printStackTrace();
-		}
-		return dataSet;  // ArrayList<StudentDTO> 반환
-	}
-	
-	//(3) insertStudent(StudentDTO dto)
-	public void insertStudent(StudentDTO dto) {
+
+	@Override
+	public void insertStudent(StudentDTOdb8 dto) {
 		try {
 			//sql 문 작성
 			String sql = "insert into student values(?,?,?,?,?,?)";
@@ -107,14 +62,43 @@ public class StudentDAO {
 		} catch (Exception e) {
 			System.out.println("오류 발생!");
 			e.printStackTrace();
-		}		
-	}	
-	
-	public void updateStudent(StudentDTO dto) {
-		
+		}	
 	}
-	
-	public void deleteStudent(String stdNo) {
+
+	@Override
+	public ArrayList<StudentDTOdb8> studentSelect() {
+ArrayList<StudentDTOdb8> dataSet = null; // try 안과 밖에서 사용
 		
+		try {
+			// sql 직성
+			String sql = "select * from student order by stdNo";
+			
+			// 쿼리문 전송을 위한 PreparedStatement 객체 생성
+			// Connection 인터페이스의 prepareStatement() 메소드를 사용하여 객체 생성	
+			pstmt = con.prepareStatement(sql);
+			
+			// 쿼리문 실행시키고 결과 받아옴
+			// select 구문이므로 executeQuery() 메서드 사용
+			// 반환되는 결과는 ResultSet 객체가 받음	
+			rs = pstmt.executeQuery(sql);
+			
+			dataSet = new ArrayList<StudentDTOdb8>();			
+			
+			while(rs.next()) {
+				dataSet.add(new StudentDTOdb8(rs.getString(1),
+						                   rs.getString(2),
+						                   rs.getInt(3),
+						                   rs.getString(4),
+						                   rs.getDate(5).toString(),
+						                   rs.getString(6)
+							));		// DTO 1개가 1행에 해당		
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println("오류 발생");
+			e.printStackTrace();
+		}
+		return dataSet;  // ArrayList<StudentDTO> 반환
 	}
 }
