@@ -64,6 +64,8 @@ public class BookDeleteEx {
 			e.printStackTrace();
 		}
 		// 도서 정보 삭제
+		
+		sc.close();
 	}
 
 }

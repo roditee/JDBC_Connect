@@ -45,5 +45,7 @@ public class StudentMain {
 		System.out.println("------------------------------------------");
 		System.out.println("종료되었습니다.");
 		System.out.println("------------------------------------------");
+		
+		sc.close();
 	}
 }

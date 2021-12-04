@@ -89,6 +89,6 @@ public class BookUpdateEx {
 			System.out.println("오류 발생!");
 			e.printStackTrace();
 		}
-		
+		sc.close();
 	}
 }

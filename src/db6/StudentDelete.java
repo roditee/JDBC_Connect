@@ -1,8 +1,5 @@
 package db6;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class StudentDelete {
@@ -17,6 +14,8 @@ public class StudentDelete {
 		
 		StudentDAO stdDAO = new StudentDAO();
 		stdDAO.deleteStudent(stdNo);
+		
+		sc.close();
 	}
 }
 

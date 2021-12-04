@@ -1,6 +1,5 @@
 package db8;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class StudentInsertdb8{

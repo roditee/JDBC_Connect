@@ -37,5 +37,7 @@ public class ProductEx {
                 System.out.println("잘못된 입력");
                 break;
         }
+        
+        scan.close();
     }
 }

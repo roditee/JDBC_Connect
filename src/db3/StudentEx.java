@@ -38,5 +38,7 @@ public class StudentEx {
 		
 		// (2) 학생 정보 조회 : StudentDAO 클래스의 selectStudent() 메서드 호출
 		stdDAO.selectStudent();
+		
+		sc.close();
 	}
 }

@@ -2,8 +2,6 @@ package db4;
 
 import java.util.Scanner;
 
-import db3.StudentDTO;
-
 public class ProductEx {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -36,5 +34,7 @@ public class ProductEx {
 		
 		// (2) 학생 정보 조회 : StudentDAO 클래스의 selectStudent() 메서드 호출
 		prdDAO.selectProduct();
+		
+		sc.close();
 	}
 }

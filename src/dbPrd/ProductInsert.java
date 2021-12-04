@@ -30,5 +30,7 @@ public class ProductInsert {
     ProductDTO productDTO =
             new ProductDTO(prdNo, prdName, prdPrice, prdMaker, prdColor, ctgNo);
     productDAO.insertProduct(productDTO);
+    
+    scan.close();
     }
 }

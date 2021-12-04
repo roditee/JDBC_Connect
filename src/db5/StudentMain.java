@@ -2,9 +2,6 @@ package db5;
 
 import java.util.Scanner;
 
-import db3.StudentDAO;
-import db3.StudentDTO;
-
 public class StudentMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -48,5 +45,7 @@ public class StudentMain {
 		System.out.println("------------------------------------------");
 		System.out.println("종료되었습니다.");
 		System.out.println("------------------------------------------");
+		
+		sc.close();
 	}
 }

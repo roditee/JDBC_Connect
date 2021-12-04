@@ -30,5 +30,7 @@ public class StudentUpdate {
 		StudentDTO stdDTO = new StudentDTO(stdNo, stdName, stdYear, stdAddress, stdBirthday, dptNo);
 		StudentDAO stdDAO = new StudentDAO();
 		stdDAO.updateStudent(stdDTO);
+		
+		sc.close();
 	}
 }

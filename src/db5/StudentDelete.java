@@ -1,12 +1,6 @@
 package db5;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.util.Scanner;
-
-import db3.StudentDAO;
-import db3.StudentDTO;
 
 public class StudentDelete {
 	public void delete() {
@@ -20,5 +14,7 @@ public class StudentDelete {
 		
 		StudentDAOdb5 stdDAO = new StudentDAOdb5();
 		stdDAO.deleteStudent(stdNo);
+		
+		sc.close();
 	}
 }

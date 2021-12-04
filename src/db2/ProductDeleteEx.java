@@ -44,6 +44,7 @@ public class ProductDeleteEx {
 			System.out.println("오류 발생!");
 			e.printStackTrace();
 		}
+		sc.close();
 	}
 
 }

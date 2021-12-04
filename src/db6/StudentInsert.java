@@ -1,6 +1,5 @@
 package db6;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class StudentInsert{
@@ -32,6 +31,8 @@ public class StudentInsert{
 		StudentDTO stdDTO = new StudentDTO(stdNo, stdName, stdYear, stdAddress, stdBirthday, dptNo);
 		StudentDAO stdDAO = new StudentDAO();
 		stdDAO.insertStudent(stdDTO);
+		
+		sc.close();
 		
 	}
 }

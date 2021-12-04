@@ -72,17 +72,17 @@ public class StudentDAOdb5 {
 		}
 	}
 	
-	public void updateStudent(StudentDTO dto) {
+	public void updateStudent(db5.StudentDTO stdDTO) {
 		try {
 			String sql = "update student set stdName=?, stdYear=?, stdAddress=?, stdBirthDay=?, dptNo=? where stdNo=?";
 			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, dto.getStdName());
-			pstmt.setInt(2, dto.getStdYear());
-			pstmt.setString(3, dto.getStdAddress());
-			pstmt.setString(4, dto.getStdBirthDay());
-			pstmt.setString(5, dto.getDptNo());
-			pstmt.setString(6, dto.getStdNo());
+			pstmt.setString(1, stdDTO.getStdName());
+			pstmt.setInt(2, stdDTO.getStdYear());
+			pstmt.setString(3, stdDTO.getStdAddress());
+			pstmt.setString(4, stdDTO.getStdBirthDay());
+			pstmt.setString(5, stdDTO.getDptNo());
+			pstmt.setString(6, stdDTO.getStdNo());
 	
 			int result = pstmt.executeUpdate();
 			

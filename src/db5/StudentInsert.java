@@ -1,9 +1,7 @@
 package db5;
 
-import java.util.Date;
 import java.util.Scanner;
 
-import db3.StudentDAO;
 import db3.StudentDTO;
 
 public class StudentInsert{
@@ -36,5 +34,6 @@ public class StudentInsert{
 		StudentDAOdb5 stdDAO = new StudentDAOdb5();
 		stdDAO.insertStudent(stdDTO);
 		
+		sc.close();
 	}
 }

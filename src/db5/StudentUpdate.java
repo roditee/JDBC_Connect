@@ -2,9 +2,6 @@ package db5;
 
 import java.util.Scanner;
 
-import db3.StudentDAO;
-import db3.StudentDTO;
-
 public class StudentUpdate {
 	public void update() {
 		Scanner sc = new Scanner(System.in);
@@ -33,5 +30,7 @@ public class StudentUpdate {
 		StudentDTO stdDTO = new StudentDTO(stdNo, stdName, stdYear, stdAddress, stdBirthday, dptNo);
 		StudentDAOdb5 stdDAO = new StudentDAOdb5();
 		stdDAO.updateStudent(stdDTO);
+		
+		sc.close();
 	}
 }
